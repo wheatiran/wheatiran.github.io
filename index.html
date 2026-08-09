@@ -1,500 +1,683 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ویت ایران | پایگاه تخصصی کشاورزی و گندم</title>
+<title>ویت ایران | رسانه تخصصی کشاورزی</title>
 
-  <meta name="description" content="ویت ایران؛ اخبار، آموزش و تحلیل تخصصی کشاورزی، گندم و محصولات استراتژیک ایران.">
+<meta name="description" content="ویت ایران؛ اخبار، آموزش و تحلیل تخصصی کشاورزی، گندم و محصولات استراتژیک ایران.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4f5f3;
+    color:#222;
+    line-height:1.9;
+}
+
+/* نوار بالایی */
+
+.top{
+    background:#173d2a;
+    color:#fff;
+    font-size:13px;
+    padding:7px 20px;
+}
+
+.top-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* هدر */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #ddd;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:22px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#e1b94b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+
+.logo h1{
+    color:#173d2a;
+    font-size:32px;
+}
+
+.logo p{
+    color:#777;
+    font-size:13px;
+}
+
+/* منو */
+
+nav{
+    background:#205738;
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    overflow-x:auto;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px 17px;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+nav a:hover{
+    background:#16432b;
+}
+
+/* محتوای اصلی */
+
+.container{
+    max-width:1200px;
+    margin:25px auto;
+    padding:0 15px;
+}
+
+/* خبر فوری */
+
+.breaking{
+    background:white;
+    border-right:5px solid #d4a52d;
+    padding:10px 15px;
+    margin-bottom:25px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.breaking strong{
+    color:#b07e12;
+    margin-left:12px;
+}
+
+/* خبر اصلی */
+
+.news-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.main-news{
+    min-height:380px;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+    background:
+    linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.05)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80")
+    center/cover;
+    display:flex;
+    align-items:flex-end;
+}
+
+.main-content{
+    color:#fff;
+    padding:30px;
+}
+
+.category{
+    display:inline-block;
+    background:#d3a42b;
+    color:#fff;
+    padding:3px 10px;
+    border-radius:4px;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.main-content h2{
+    font-size:30px;
+    line-height:1.5;
+    margin-bottom:8px;
+}
+
+.main-content p{
+    color:#eee;
+    font-size:14px;
+}
+
+/* اخبار کنار */
+
+.latest{
+    background:#fff;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #205738;
+    padding-bottom:10px;
+    margin-bottom:10px;
+}
+
+.section-head h2{
+    color:#173d2a;
+    font-size:20px;
+}
+
+.news{
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.news:last-child{
+    border-bottom:none;
+}
+
+.news small{
+    color:#b1841c;
+    font-size:11px;
+}
+
+.news a{
+    display:block;
+    color:#333;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* رادیو گندم */
+
+.radio{
+    background:linear-gradient(120deg,#191919,#292929);
+    color:white;
+    padding:28px;
+    border-radius:10px;
+    margin-bottom:28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.radio-label{
+    color:#e0b52d;
+    font-size:12px;
+}
+
+.radio h2{
+    font-size:25px;
+}
+
+.radio p{
+    color:#ccc;
+    font-size:14px;
+}
+
+.radio-button{
+    background:#d2a329;
+    color:#fff;
+    text-decoration:none;
+    padding:9px 18px;
+    border-radius:5px;
+    white-space:nowrap;
+}
+
+/* کارت ها */
+
+.section{
+    background:#fff;
+    border-radius:10px;
+    padding:22px;
+    margin-bottom:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    border:1px solid #eee;
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card-image{
+    height:160px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card-content small{
+    color:#a37818;
+}
+
+.card-content h3{
+    font-size:16px;
+    margin-top:5px;
+}
+
+/* دسته بندی */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.category-box{
+    background:#edf3ee;
+    padding:22px;
+    text-align:center;
+    border-radius:8px;
+    color:#205738;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* فوتر */
+
+footer{
+    background:#173d2a;
+    color:white;
+    margin-top:40px;
+    padding:30px 20px;
+    text-align:center;
+}
+
+footer strong{
+    font-size:22px;
+}
+
+footer p{
+    color:#cbd8cf;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* موبایل */
+
+@media(max-width:800px){
+
+    .top-inner{
+        justify-content:center;
     }
 
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: #f4f6f8;
-      color: #222;
-      line-height: 1.9;
+    .header-inner{
+        flex-direction:column;
+        text-align:center;
     }
 
-    .topbar {
-      background: #173f2a;
-      color: white;
-      padding: 8px 5%;
-      font-size: 13px;
+    .news-layout{
+        grid-template-columns:1fr;
     }
 
-    header {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 22px 5%;
+    .main-news{
+        min-height:320px;
     }
 
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .main-content h2{
+        font-size:23px;
     }
 
-    .logo {
-      font-size: 34px;
-      font-weight: bold;
-      color: #173f2a;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .tagline {
-      color: #777;
-      font-size: 14px;
+    .categories{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    nav {
-      background: #1f5a39;
+    .radio{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    nav ul {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      list-style: none;
-      overflow-x: auto;
-    }
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      padding: 13px 18px;
-      white-space: nowrap;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      background: #17462c;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 25px auto;
-      padding: 0 15px;
-    }
-
-    .breaking {
-      background: white;
-      border-right: 5px solid #d49b25;
-      padding: 12px 18px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
-    }
-
-    .breaking strong {
-      color: #b27a0d;
-      margin-left: 10px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .main-news,
-    .side-news,
-    .section {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,.06);
-    }
-
-    .main-news {
-      min-height: 310px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: linear-gradient(135deg, #173f2a, #36754b);
-      color: white;
-    }
-
-    .main-news .category {
-      color: #f4ce68;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .main-news h1 {
-      font-size: 30px;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .main-news p {
-      color: #e7eee9;
-      font-size: 15px;
-    }
-
-    .side-news {
-      padding: 20px;
-    }
-
-    .side-news h2 {
-      font-size: 20px;
-      color: #173f2a;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #d49b25;
-      padding-bottom: 10px;
-    }
-
-    .news-item {
-      padding: 13px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .news-item:last-child {
-      border-bottom: none;
-    }
-
-    .news-item span {
-      display: block;
-      color: #a47719;
-      font-size: 12px;
-      margin-bottom: 3px;
-    }
-
-    .news-item a {
-      color: #333;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 22px;
-      margin-bottom: 25px;
-    }
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #173f2a;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-    }
-
-    .section-title h2 {
-      color: #173f2a;
-      font-size: 22px;
-    }
-
-    .section-title a {
-      color: #777;
-      font-size: 13px;
-      text-decoration: none;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      border: 1px solid #eee;
-      border-radius: 7px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .card-image {
-      height: 150px;
-      background: linear-gradient(135deg, #d8e5d6, #9fbd91);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #315a39;
-      font-size: 42px;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content small {
-      color: #a47719;
-    }
-
-    .card-content h3 {
-      font-size: 16px;
-      line-height: 1.7;
-      margin-top: 5px;
-    }
-
-    .radio {
-      background: linear-gradient(135deg, #292929, #111);
-      color: white;
-      padding: 25px;
-      border-radius: 8px;
-      margin-bottom: 25px;
-    }
-
-    .radio-title {
-      color: #f0c84b;
-      font-size: 13px;
-      margin-bottom: 5px;
-    }
-
-    .radio h2 {
-      font-size: 25px;
-      margin-bottom: 8px;
-    }
-
-    .radio p {
-      color: #ccc;
-      margin-bottom: 15px;
-    }
-
-    .radio-button {
-      display: inline-block;
-      background: #d49b25;
-      color: white;
-      padding: 9px 18px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #173f2a;
-      color: white;
-      padding: 30px 5%;
-      margin-top: 40px;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    footer p {
-      color: #cbd8cf;
-      font-size: 13px;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 800px) {
-      .header-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .main-news h1 {
-        font-size: 24px;
-      }
-
-      .logo {
-        font-size: 30px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <div class="topbar">
-    ویت ایران | پایگاه تخصصی کشاورزی و گندم
-  </div>
+<div class="top">
+<div class="top-inner">
+<span>ویت ایران | رسانه تخصصی کشاورزی</span>
+<span>اخبار • آموزش • تحلیل</span>
+</div>
+</div>
 
-  <header>
-    <div class="header-inner">
-      <div>
-        <div class="logo">ویت ایران</div>
-        <div class="tagline">اخبار، آموزش و تحلیل تخصصی کشاورزی ایران</div>
-      </div>
 
-      <div class="tagline">
-        پایگاه تخصصی کشاورزان و کارشناسان
-      </div>
-    </div>
-  </header>
+<header>
 
-  <nav>
-    <ul>
-      <li><a href="#">صفحه اصلی</a></li>
-      <li><a href="#">اخبار کشاورزی</a></li>
-      <li><a href="#">گندم</a></li>
-      <li><a href="#">جو</a></li>
-      <li><a href="#">کلزا</a></li>
-      <li><a href="#">هواشناسی کشاورزی</a></li>
-      <li><a href="#">آموزش</a></li>
-      <li><a href="#">رادیو گندم</a></li>
-    </ul>
-  </nav>
+<div class="header-inner">
 
-  <main class="container">
+<div class="logo">
 
-    <div class="breaking">
-      <strong>آخرین خبر</strong>
-      اخبار و اطلاعات مهم کشاورزی ایران را از ویت ایران دنبال کنید.
-    </div>
+<div class="logo-icon">🌾</div>
 
-    <section class="hero">
+<div>
+<h1>ویت ایران</h1>
+<p>رسانه تخصصی کشاورزی و گندم ایران</p>
+</div>
 
-      <article class="main-news">
-        <div class="category">ویژه ویت ایران</div>
+</div>
 
-        <h1>
-          تازه‌ترین اخبار و تحلیل‌های کشاورزی ایران
-        </h1>
+</div>
 
-        <p>
-          از آخرین تحولات گندم و محصولات استراتژیک تا آموزش‌های کاربردی برای کشاورزان.
-        </p>
-      </article>
+</header>
 
-      <aside class="side-news">
-        <h2>اخبار مهم</h2>
 
-        <div class="news-item">
-          <span>گندم</span>
-          <a href="#">آخرین وضعیت تولید و خرید تضمینی گندم</a>
-        </div>
+<nav>
 
-        <div class="news-item">
-          <span>کشاورزی</span>
-          <a href="#">مهم‌ترین اخبار امروز بخش کشاورزی</a>
-        </div>
+<div class="nav-inner">
 
-        <div class="news-item">
-          <span>هواشناسی</span>
-          <a href="#">هشدارهای هواشناسی برای کشاورزان</a>
-        </div>
+<a href="#">صفحه اصلی</a>
+<a href="#">اخبار کشاورزی</a>
+<a href="#">گندم</a>
+<a href="#">جو</a>
+<a href="#">کلزا</a>
+<a href="#">هواشناسی کشاورزی</a>
+<a href="#">آموزش</a>
+<a href="#">رادیو گندم</a>
 
-        <div class="news-item">
-          <span>آموزش</span>
-          <a href="#">نکات کاربردی برای افزایش عملکرد مزارع گندم</a>
-        </div>
-      </aside>
+</div>
 
-    </section>
+</nav>
 
-    <section class="radio">
 
-      <div class="radio-title">رادیو گندم</div>
+<main class="container">
 
-      <h2>صدای کشاورزی ایران</h2>
 
-      <p>
-        گزارش‌های خبری، آموزشی و تحلیلی ویت ایران را در رادیو گندم دنبال کنید.
-      </p>
+<div class="breaking">
 
-      <a class="radio-button" href="#">
-        ورود به رادیو گندم
-      </a>
+<strong>آخرین خبر</strong>
 
-    </section>
+آخرین اخبار و تحولات بخش کشاورزی ایران را در ویت ایران دنبال کنید.
 
-    <section class="section">
+</div>
 
-      <div class="section-title">
-        <h2>آخرین مطالب</h2>
-        <a href="#">مشاهده همه مطالب</a>
-      </div>
 
-      <div class="cards">
+<div class="news-layout">
 
-        <article class="card">
-          <div class="card-image">🌾</div>
-          <div class="card-content">
-            <small>گندم</small>
-            <h3>جدیدترین اخبار و اطلاعات مربوط به گندم</h3>
-          </div>
-        </article>
 
-        <article class="card">
-          <div class="card-image">🌱</div>
-          <div class="card-content">
-            <small>آموزش</small>
-            <h3>آموزش‌های کاربردی برای مدیریت بهتر مزرعه</h3>
-          </div>
-        </article>
+<article class="main-news">
 
-        <article class="card">
-          <div class="card-image">☁️</div>
-          <div class="card-content">
-            <small>هواشناسی</small>
-            <h3>پیش‌بینی هوا و توصیه‌های هواشناسی کشاورزی</h3>
-          </div>
-        </article>
+<div class="main-content">
 
-      </div>
+<span class="category">خبر ویژه</span>
 
-    </section>
+<h2>
+آخرین اخبار و تحلیل‌های کشاورزی ایران
+</h2>
 
-    <section class="section">
+<p>
+از مزرعه تا بازار؛ اخبار، آموزش و تحلیل‌های تخصصی برای کشاورزان و کارشناسان.
+</p>
 
-      <div class="section-title">
-        <h2>محصولات استراتژیک</h2>
-      </div>
+</div>
 
-      <div class="cards">
+</article>
 
-        <article class="card">
-          <div class="card-content">
-            <small>گندم</small>
-            <h3>اخبار و آموزش تخصصی گندم</h3>
-          </div>
-        </article>
 
-        <article class="card">
-          <div class="card-content">
-            <small>جو</small>
-            <h3>اطلاعات و مطالب تخصصی جو</h3>
-          </div>
-        </article>
+<aside class="latest">
 
-        <article class="card">
-          <div class="card-content">
-            <small>کلزا</small>
-            <h3>اخبار و آموزش کشت کلزا</h3>
-          </div>
-        </article>
+<div class="section-head">
 
-      </div>
+<h2>آخرین اخبار</h2>
 
-    </section>
+<span>ویت ایران</span>
 
-  </main>
+</div>
 
-  <footer>
-    <div class="footer-inner">
-      <strong>ویت ایران</strong>
-      <p>
-        پایگاه تخصصی اخبار، آموزش و تحلیل کشاورزی ایران
-      </p>
-      <p>
-        © ۱۴۰۵ ویت ایران - تمامی حقوق محفوظ است.
-      </p>
-    </div>
-  </footer>
+
+<div class="news">
+
+<small>گندم</small>
+
+<a href="#">
+آخرین وضعیت تولید و خرید گندم در ایران
+</a>
+
+</div>
+
+
+<div class="news">
+
+<small>کشاورزی</small>
+
+<a href="#">
+مهم‌ترین اخبار امروز بخش کشاورزی
+</a>
+
+</div>
+
+
+<div class="news">
+
+<small>هواشناسی</small>
+
+<a href="#">
+هشدارهای هواشناسی و توصیه به کشاورزان
+</a>
+
+</div>
+
+
+<div class="news">
+
+<small>آموزش</small>
+
+<a href="#">
+نکات مهم برای افزایش عملکرد مزارع گندم
+</a>
+
+</div>
+
+</aside>
+
+</div>
+
+
+<section class="radio">
+
+<div>
+
+<div class="radio-label">رادیو گندم</div>
+
+<h2>صدای کشاورزی ایران</h2>
+
+<p>
+گزارش‌های خبری و آموزشی ویت ایران را بشنوید.
+</p>
+
+</div>
+
+<a href="#" class="radio-button">
+ورود به رادیو گندم
+</a>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-head">
+
+<h2>مطالب منتخب</h2>
+
+<span>ویت ایران</span>
+
+</div>
+
+
+<div class="cards">
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+<div class="card-content">
+
+<small>گندم</small>
+
+<h3>
+جدیدترین اخبار و اطلاعات تخصصی گندم
+</h3>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+<div class="card-content">
+
+<small>آموزش</small>
+
+<h3>
+آموزش‌های کاربردی برای مدیریت بهتر مزرعه
+</h3>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img src="https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+<div class="card-content">
+
+<small>هواشناسی</small>
+
+<h3>
+هواشناسی کشاورزی و توصیه‌های کاربردی
+</h3>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-head">
+
+<h2>موضوعات کشاورزی</h2>
+
+</div>
+
+
+<div class="categories">
+
+<a href="#" class="category-box">🌾 گندم</a>
+
+<a href="#" class="category-box">🌱 جو</a>
+
+<a href="#" class="category-box">🌿 کلزا</a>
+
+<a href="#" class="category-box">☁️ هواشناسی</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<strong>ویت ایران</strong>
+
+<p>
+رسانه تخصصی اخبار، آموزش و تحلیل کشاورزی ایران
+</p>
+
+<p>
+© ۱۴۰۵ ویت ایران
+</p>
+
+</footer>
 
 </body>
 </html>
