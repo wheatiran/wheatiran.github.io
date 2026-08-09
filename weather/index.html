@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>هواشناسی کشاورزی | ویت ایران</title>
+
+<meta name="description" content="پیش‌بینی هوا، هشدارهای هواشناسی و توصیه‌های کاربردی برای کشاورزان ایران در ویت ایران.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f3f5f4;
+    color:#222;
+    line-height:1.9;
+}
+
+header{
+    background:#173d2a;
+    color:white;
+    padding:22px 20px;
+}
+
+.header{
+    max-width:1100px;
+    margin:auto;
+}
+
+.logo{
+    font-size:29px;
+    font-weight:bold;
+}
+
+.subtitle{
+    color:#d4dfd8;
+    font-size:13px;
+}
+
+nav{
+    background:#205738;
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    overflow-x:auto;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px 17px;
+    white-space:nowrap;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:#16432b;
+}
+
+.container{
+    max-width:1100px;
+    margin:30px auto;
+    padding:0 15px;
+}
+
+.title-box{
+    background:white;
+    padding:28px;
+    border-right:5px solid #d3a42b;
+    border-radius:9px;
+    margin-bottom:25px;
+}
+
+.title-box h1{
+    color:#173d2a;
+    font-size:29px;
+}
+
+.title-box p{
+    color:#777;
+    font-size:14px;
+}
+
+.alert{
+    background:#fff4d8;
+    border-right:5px solid #d3a42b;
+    padding:18px;
+    border-radius:7px;
+    margin-bottom:25px;
+}
+
+.alert strong{
+    color:#9a7018;
+}
+
+.forecast{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.day{
+    background:white;
+    padding:20px;
+    border-radius:9px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    text-align:center;
+}
+
+.day h2{
+    color:#173d2a;
+    font-size:20px;
+}
+
+.weather-icon{
+    font-size:42px;
+    margin:8px;
+}
+
+.temp{
+    font-size:24px;
+    font-weight:bold;
+    color:#205738;
+}
+
+.day p{
+    color:#666;
+    font-size:13px;
+}
+
+.section{
+    background:white;
+    padding:22px;
+    border-radius:9px;
+    margin-top:25px;
+}
+
+.section h2{
+    color:#173d2a;
+    border-bottom:2px solid #205738;
+    padding-bottom:9px;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.advice{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.advice-box{
+    background:#edf3ee;
+    padding:18px;
+    border-radius:7px;
+}
+
+.advice-box h3{
+    color:#205738;
+    font-size:17px;
+}
+
+.advice-box p{
+    color:#555;
+    font-size:13px;
+}
+
+.provinces{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.province{
+    background:#f3f5f4;
+    border:1px solid #e2e5e2;
+    padding:13px;
+    text-align:center;
+    border-radius:6px;
+    color:#205738;
+    font-weight:bold;
+}
+
+.source{
+    margin-top:25px;
+    background:#eee;
+    padding:15px;
+    border-radius:7px;
+    font-size:12px;
+    color:#666;
+}
+
+footer{
+    background:#173d2a;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+
+footer p{
+    color:#cbd8cf;
+    font-size:13px;
+}
+
+@media(max-width:750px){
+
+    .forecast{
+        grid-template-columns:1fr;
+    }
+
+    .advice{
+        grid-template-columns:1fr;
+    }
+
+    .provinces{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="header">
+
+<div class="logo">☁️ هواشناسی کشاورزی</div>
+
+<div class="subtitle">
+بخش تخصصی هواشناسی ویت ایران
+</div>
+
+</div>
+
+</header>
+
+
+<nav>
+
+<div class="nav">
+
+<a href="../index.html">صفحه اصلی</a>
+
+<a href="../news/">اخبار کشاورزی</a>
+
+<a href="../wheat/">گندم</a>
+
+<a href="#">جو</a>
+
+<a href="#">کلزا</a>
+
+<a href="index.html">هواشناسی کشاورزی</a>
+
+<a href="#">آموزش</a>
+
+<a href="../radio/">رادیو گندم</a>
+
+</div>
+
+</nav>
+
+
+<main class="container">
+
+
+<section class="title-box">
+
+<h1>
+هواشناسی کشاورزی ایران
+</h1>
+
+<p>
+پیش‌بینی هوا، هشدارهای جوی و توصیه‌های کاربردی برای کشاورزان
+</p>
+
+</section>
+
+
+<section class="alert">
+
+<strong>⚠️ هشدار هواشناسی</strong>
+
+<p>
+در این بخش هشدارهای رسمی هواشناسی و توصیه‌های مرتبط با فعالیت‌های کشاورزی منتشر خواهد شد.
+</p>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+پیش‌بینی ۷۲ ساعته
+</h2>
+
+
+<div class="forecast">
+
+
+<div class="day">
+
+<h2>امروز</h2>
+
+<div class="weather-icon">☀️</div>
+
+<div class="temp">
+۲۸°
+</div>
+
+<p>
+آسمان صاف تا کمی ابری
+</p>
+
+<p>
+باد: متوسط
+</p>
+
+</div>
+
+
+<div class="day">
+
+<h2>فردا</h2>
+
+<div class="weather-icon">🌤️</div>
+
+<div class="temp">
+۲۶°
+</div>
+
+<p>
+کاهش نسبی دما
+</p>
+
+<p>
+احتمال بارش: کم
+</p>
+
+</div>
+
+
+<div class="day">
+
+<h2>پس‌فردا</h2>
+
+<div class="weather-icon">🌦️</div>
+
+<div class="temp">
+۲۴°
+</div>
+
+<p>
+افزایش ابر و احتمال بارش
+</p>
+
+<p>
+باد: نسبتاً شدید
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+توصیه‌های هواشناسی برای کشاورزان
+</h2>
+
+
+<div class="advice">
+
+
+<div class="advice-box">
+
+<h3>
+🌾 گندم
+</h3>
+
+<p>
+شرایط دما، بارش و رطوبت برای مراحل مختلف رشد گندم بررسی شود.
+</p>
+
+</div>
+
+
+<div class="advice-box">
+
+<h3>
+🌱 کلزا
+</h3>
+
+<p>
+در زمان بارش یا وزش باد شدید، عملیات سم‌پاشی و محلول‌پاشی با احتیاط انجام شود.
+</p>
+
+</div>
+
+
+<div class="advice-box">
+
+<h3>
+🌽 محصولات زراعی
+</h3>
+
+<p>
+قبل از انجام عملیات مزرعه، پیش‌بینی کوتاه‌مدت و هشدارهای جوی بررسی شود.
+</p>
+
+</div>
+
+
+<div class="advice-box">
+
+<h3>
+💧 آبیاری
+</h3>
+
+<p>
+زمان‌بندی آبیاری با توجه به دما، بارش و تبخیر و تعرق تنظیم شود.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+استان‌های مهم کشاورزی
+</h2>
+
+
+<div class="provinces">
+
+<div class="province">خوزستان</div>
+
+<div class="province">فارس</div>
+
+<div class="province">گلستان</div>
+
+<div class="province">کرمانشاه</div>
+
+<div class="province">آذربایجان شرقی</div>
+
+<div class="province">آذربایجان غربی</div>
+
+<div class="province">قزوین</div>
+
+<div class="province">همدان</div>
+
+</div>
+
+</section>
+
+
+<div class="source">
+
+منبع پیش‌بینی و هشدارها:
+سازمان هواشناسی کشور و منابع رسمی مرتبط.
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>ویت ایران</strong>
+
+<p>
+هواشناسی کشاورزی | اخبار | آموزش | تحلیل
+</p>
+
+</footer>
+
+
+</body>
+
+</html>
